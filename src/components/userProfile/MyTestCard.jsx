@@ -23,12 +23,12 @@ const MyTestCard = ({testId, isEdit}) => {
     }else{
       setConfirmDelete(false)
     }
-  }, [selectParams])
+  }, [selectParams, testId])
   useEffect(() => {
     if(isEdit === false){
       dispatch(resetSelect())
     }
-  }, [isEdit])
+  }, [isEdit, dispatch])
   useEffect(() => {
     if(testId !== undefined){
       axios.get(`/api/getMyTestData/?id=${testId}`)

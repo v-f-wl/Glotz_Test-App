@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CiRead, CiUnread } from 'react-icons/ci'
+import Paragraph from "../UI/Paragraph";
 
 const SingInScreen = ({changeScreen}) => {
   const [load, setLoad] = useState(false)

@@ -18,7 +18,7 @@ const CountOfAnsers = ({prevStep, nextStep, changeValue}) => {
     }else{
       setMuteButton(false)
     }
-  }, [dataValue])
+  }, [dataValue, changeValue])
 
   const Title = ({title}) => {
     return (

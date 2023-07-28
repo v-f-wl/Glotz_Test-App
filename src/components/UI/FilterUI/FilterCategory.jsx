@@ -6,13 +6,13 @@ const FilterCategory = ({handleChange, filterValue}) => {
 
   useEffect(() => {
     handleChange('category', selectedTag)
-  }, [selectedTag])
+  }, [selectedTag, handleChange])
   
   useEffect(() => {
     if(filterValue !== selectedTag){
       setSelectedTag(filterValue)
     }
-  }, [filterValue])
+  }, [filterValue, selectedTag])
 
   const changeTag = (value) => {
     if(selectedTag === value){

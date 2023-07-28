@@ -5,13 +5,13 @@ const FilterRating = ({handleChange, filterValue}) => {
 
   useEffect(() => {
     handleChange('rating', handleValue)
-  },[handleValue])
+  },[handleValue, handleChange])
 
   useEffect(() => {
     if(filterValue !== handleValue){
       setHandleValue(filterValue)
     }
-  }, [filterValue])
+  }, [filterValue,handleValue])
 
   
   const changeHandleValue = (value) => {

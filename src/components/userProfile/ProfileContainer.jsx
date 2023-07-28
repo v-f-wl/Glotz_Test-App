@@ -25,7 +25,7 @@ const ProfileContainer = () => {
         setTestInfo(res.data.testData)
       })
     }
-  }, [id])
+  }, [id, cookiesId])
 
   const renderTests = () => {
     const arr = []

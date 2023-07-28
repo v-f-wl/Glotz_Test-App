@@ -15,7 +15,7 @@ const InputsQiestion = ({index, data, changeValue, countOfAnswer}) => {
 
   useEffect(() => {
     changeValue(index, questionBody)
-  }, [questionBody])
+  }, [questionBody, changeValue, index])
 
   const renderAnswer = () => {
     const arr = []

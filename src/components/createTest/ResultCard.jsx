@@ -21,17 +21,17 @@ const ResultCard = ({number, resultCount ,maxPoint, updateData}) => {
     }else{
       setInputValue(false)
     }
-  }, [resultCount, dataResult.score])
+  }, [resultCount, dataResult.score, maxPoint])
 
   useEffect(() => {
     updateData(number, dataResult)
-  },[dataResult])
+  },[dataResult, updateData, number])
 
   useEffect(() => {
     if(number === 1){
       handleChangeData('score', '0')
     }
-  }, [number])
+  }, [number, handleChangeData])
 
 
   return ( 
