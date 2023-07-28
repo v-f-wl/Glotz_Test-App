@@ -1,4 +1,4 @@
-'use state'
+'use client'
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
@@ -41,8 +41,8 @@ const ProfileContainer = () => {
     router.push('/')
   }
   return ( 
-    <div className="flex flex-col gap-4 md:gap-8 mb-4 md:mb-8">
-      <div className="flex items-center justify-between">
+    <div className="flex items-center md:items-start flex-col gap-4 md:gap-8 mb-4 md:mb-8">
+      <div className="w-full flex flex-col gap-4 md:flex-row items-center justify-between">
         <h2 className="text-3xl md:text-5xl text-sky-900 font-bold">
           {personInfo !== undefined && personInfo.fullName}
         </h2>

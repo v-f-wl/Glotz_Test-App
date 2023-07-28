@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import ResultRaitingButton from "./ResultRaitingButton";
 import { useState } from "react";

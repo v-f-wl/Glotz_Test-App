@@ -1,4 +1,4 @@
-
+'use client'
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -28,7 +28,7 @@ const MyTestCard = ({testId, isEdit}) => {
     if(isEdit === false){
       dispatch(resetSelect())
     }
-  }, [isEdit, dispatch])
+  }, [isEdit])
   useEffect(() => {
     if(testId !== undefined){
       axios.get(`/api/getMyTestData/?id=${testId}`)

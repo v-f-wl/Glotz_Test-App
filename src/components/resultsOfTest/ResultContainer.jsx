@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from "react";
 import TitleWithLine from "../UI/TitleWithLine";
 import ResultCard from "./ResultCard";

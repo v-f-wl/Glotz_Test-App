@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from "react";
 
 const FilterRating = ({handleChange, filterValue}) => {
@@ -5,13 +6,13 @@ const FilterRating = ({handleChange, filterValue}) => {
 
   useEffect(() => {
     handleChange('rating', handleValue)
-  },[handleValue, handleChange])
+  },[handleValue])
 
   useEffect(() => {
     if(filterValue !== handleValue){
       setHandleValue(filterValue)
     }
-  }, [filterValue,handleValue])
+  }, [filterValue])
 
   
   const changeHandleValue = (value) => {

@@ -1,3 +1,4 @@
+'use client'
 import { category } from "@/templates/category";
 import { useEffect, useState } from "react";
 
@@ -6,13 +7,13 @@ const FilterCategory = ({handleChange, filterValue}) => {
 
   useEffect(() => {
     handleChange('category', selectedTag)
-  }, [selectedTag, handleChange])
+  }, [selectedTag])
   
   useEffect(() => {
     if(filterValue !== selectedTag){
       setSelectedTag(filterValue)
     }
-  }, [filterValue, selectedTag])
+  }, [filterValue])
 
   const changeTag = (value) => {
     if(selectedTag === value){

@@ -17,7 +17,7 @@ const UserCardTest = ({id}) => {
 
   return ( 
     <Link href={notFound ? '' :`/testpage/?id=${id}`} 
-      className={`${notFound ? 'hidden' : 'flex'} flex-col gap-4 border border-teal-700 p-6 rounded-md shadow-md transition-all hover:shadow-green-800/40`}
+      className={`${notFound ? 'hidden' : 'flex'} flex-col gap-4 border border-teal-700 p-3 md:p-6 rounded-md shadow-md transition-all hover:shadow-green-800/40`}
     >
       <h3 className="font-bold text-3xl text-slate-600 h-[65px] overflow-hidden">
         {testData !== undefined && testData.title}

@@ -1,5 +1,4 @@
 'use client'
-
 import { useCallback, useEffect, useState } from "react";
 
 const ResultCard = ({number, resultCount ,maxPoint, updateData}) => {
@@ -25,13 +24,13 @@ const ResultCard = ({number, resultCount ,maxPoint, updateData}) => {
 
   useEffect(() => {
     updateData(number, dataResult)
-  },[dataResult, updateData, number])
+  },[dataResult, number])
 
   useEffect(() => {
     if(number === 1){
       handleChangeData('score', '0')
     }
-  }, [number, handleChangeData])
+  }, [number])
 
 
   return ( 

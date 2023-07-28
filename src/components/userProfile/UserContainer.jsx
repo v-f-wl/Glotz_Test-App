@@ -31,7 +31,7 @@ const UserContainer = () => {
   }
   return ( 
     <div className="">
-      <h2 className="text-5xl text-sky-900 font-bold">
+      <h2 className="text-3xl md:text-5xl text-sky-900 font-bold">
         {userData !== undefined && userData}
       </h2>
       <div className="mt-8">
@@ -39,7 +39,7 @@ const UserContainer = () => {
           title='Тесты автора'
           linePosition={false}
         />
-        <div className="mt-6 grid grid-cols-2 gap-10 mb-4 md:mb-8">
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 mb-4 md:mb-8">
           {testsData !== undefined ?
             (
               renderTest()
