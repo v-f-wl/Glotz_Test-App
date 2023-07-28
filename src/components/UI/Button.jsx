@@ -14,6 +14,7 @@ const Button = ({handleClick, validationValue, titleValue}) => {
         ${validationValue === false ? 'opacity-30' : ''}
         ${validationValue === true ? 'hover:border-indigo-400' : ''}
         ${validationValue === true ? 'hover:text-indigo-400' : ''}
+        ${validationValue === true ? 'cursor-pointer' : 'cursor-default'}
         border 
       border-green-950 
         rounded-md 
@@ -25,7 +26,6 @@ const Button = ({handleClick, validationValue, titleValue}) => {
         text-lg 
         md:text-2xl 
         transition 
-        cursor-pointer
       `}
     >
       {!!titleValue && titleValue}

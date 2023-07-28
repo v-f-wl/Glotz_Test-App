@@ -3,40 +3,81 @@ import { useEffect, useState } from "react";
 import CardBody from "../cardOfTest/CardBody";
 import axios from "axios";
 import Button from "../UI/Button";
+import { useSelector } from "react-redux";
 
 const MainWalls = () => {
   const [tests, setTests] = useState()
+  const [haventTests, setHaventTests] = useState(false)
+  const [pageCount, setPageCount] = useState(1)
+  const [moreData, setMoreData] = useState(true)
+  const filterParams = useSelector(state => state.filterReducer.value);
+
 
   useEffect(() => {
-    axios.get('/api/getPreviewTest')
-    .then(res => setTests(res.data))
-  },[])
+    if(filterParams.rating === '' && filterParams.category === ''){
+      setPageCount(1)
+    }
+    axios.post('/api/getPreviewTest', {...filterParams, pageCount: 1})
+    .then(res => {
+      setMoreData(res.data.hasMore)
+      if(res.data.length !== 0 ){
+        setTests(res.data.tests)
+        setHaventTests(false)
+        setPageCount(prev => prev = prev + 1)
+      }else{
+        setTests([])
+        setPageCount(prev => prev = prev + 1)
+        setHaventTests(true)
+      }
+    })
+  }, [filterParams])
 
+  const getMoreTests = () => {
+    axios.post('/api/getPreviewTest', {...filterParams, pageCount})
+    .then(res => {
+      setTests(prev => {
+        const arr = [...prev, ...res.data.tests]
+        return arr
+      })
+      setMoreData(res.data.hasMore)
+    })
+    setPageCount(prev => prev = prev + 1)
+  }
   return ( 
     <div className="mt-4 lg:mt-8 mb-4">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-10">
-        {tests !== undefined ? 
-        (tests.map(item => (
-            <CardBody
-              key={item._id}
-              id={item._id}
-              title={item.title}
-              description={item.description}
-              watchings={item.watchings}
-              ratingResult={item.ratingResult}
-              category={item.category}
-            />
-          ))) 
-          : 
-          (
-            <div className="h-[20vh] col-span-2  w-full flex flex-col justify-center items-center">
-              Загрузка...
-            </div>
-          )
+        {tests !== undefined  ? 
+            (tests.map(item => (
+              <CardBody
+                key={item._id}
+                id={item._id}
+                title={item.title}
+                description={item.description}
+                watchings={item.watchings}
+                ratingResult={item.ratingResult}
+                category={item.category}
+              />
+            ))) 
+            : 
+            (
+              <div className="h-[20vh] col-span-2  w-full flex flex-col justify-center items-center">
+                Загрузка...
+              </div>
+            )
         }
+        {haventTests && (
+          <div className="">
+            <h3 className="">Тест не найдены</h3>
+            <div className="">Сбросить фильтр</div>
+          </div>
+        )}
       </div>
       <div className="mt-8 flex justify-center">
-        <Button handleClick validationValue={true} titleValue="Больше тестов"/>
+        {moreData ? 
+          <Button handleClick={getMoreTests} validationValue={true} titleValue="Больше тестов"/>
+        :
+          null
+        }
       </div>
     </div>
   );

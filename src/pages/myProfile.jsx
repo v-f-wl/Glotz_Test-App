@@ -3,11 +3,13 @@ import 'tailwindcss/tailwind.css';
 import { Montserrat } from 'next/font/google'
 import MainContainer from '@/components/mainElements/MainContainer';
 import ProfileContainer from '@/components/userProfile/ProfileContainer';
+import { ReduxProvider } from '@/redux/Provider';
 const inter = Montserrat({ subsets: ['latin'] })
 
 
 export default function TestPage(){
   return ( 
+    <ReduxProvider>
       <div className={inter.className}>
         <main className="break-words">
           <HeaderContainer/>
@@ -16,5 +18,6 @@ export default function TestPage(){
           </MainContainer>
         </main>
       </div>
+    </ReduxProvider>
   );
 }

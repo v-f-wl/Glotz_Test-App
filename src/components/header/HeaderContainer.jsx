@@ -20,6 +20,7 @@ const HeaderContainer = () => {
     <div 
       className={`
         fixed
+        z-30
         w-full
         px-1
         flex 
