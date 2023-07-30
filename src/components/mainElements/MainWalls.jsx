@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import CardBody from "../cardOfTest/CardBody";
 import axios from "axios";
 import Button from "../UI/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { resetFilter } from "@/redux/filter/filter-slice";
 
 const MainWalls = () => {
   const [tests, setTests] = useState()
@@ -11,7 +12,7 @@ const MainWalls = () => {
   const [pageCount, setPageCount] = useState(1)
   const [moreData, setMoreData] = useState(true)
   const filterParams = useSelector(state => state.filterReducer.value);
-
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if(filterParams.rating === '' && filterParams.category === ''){
@@ -20,12 +21,13 @@ const MainWalls = () => {
     axios.post('/api/getPreviewTest', {...filterParams, pageCount: 1})
     .then(res => {
       setMoreData(res.data.hasMore)
-      if(res.data.length !== 0 ){
+      console.log(res.data)
+      if(res.data.tests.length > 0 ){
         setTests(res.data.tests)
         setHaventTests(false)
         setPageCount(prev => prev = prev + 1)
       }else{
-        setTests([])
+        setTests(undefined)
         setPageCount(prev => prev = prev + 1)
         setHaventTests(true)
       }
@@ -60,15 +62,15 @@ const MainWalls = () => {
             ))) 
             : 
             (
-              <div className="h-[20vh] col-span-2  w-full flex flex-col justify-center items-center">
+              <div className={`${haventTests && 'hidden'} h-[20vh] col-span-2  w-full flex flex-col justify-center items-center`}>
                 Загрузка...
               </div>
             )
         }
         {haventTests && (
-          <div className="">
-            <h3 className="">Тест не найдены</h3>
-            <div className="">Сбросить фильтр</div>
+          <div className="w-full h-full max-h-[300px] col-span-2 mt-10 md:mt-24 flex flex-col items-center gap-8 justify-center">
+            <h3 className="font-bold text-2xl md:text-4xl text-center">Тесты не найдены</h3>
+            <Button handleClick={() => dispatch(resetFilter())} validationValue={true} titleValue='Сбросить фильтр'/>
           </div>
         )}
       </div>

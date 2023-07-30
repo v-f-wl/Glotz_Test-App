@@ -59,9 +59,13 @@ const NavHeader = () => {
 
           flex 
           flex-col
-          items-center justify-center gap-2 text-2xl font-medium
+          items-center 
+          justify-center 
+          gap-2 
+          text-md
+          font-medium
 
-          md:text-base
+          md:text-lg
           md:font-normal
           md:flex-row
           md:items-center 

@@ -67,7 +67,7 @@ const MyTestCard = ({testId, isEdit}) => {
   }
 
   return (  
-    <div className={`${testWasDeleted ? 'hidden' : 'block'} relative transition-all z-10 border border-green-800 rounded-lg p-4 col-span-1 overflow-hidden`}>
+    <div className={`${testWasDeleted ? 'hidden' : 'block'} relative transition-all z-10 border border-green-800 rounded-lg p-4 col-span-1 overflow-hidden w-full`}>
       <Link href={`/testpage/?id=${testId}`} className={`${isEdit ? 'text-white' : ''} cursor-pointer`}>
         <div className="font-bold text-2xl text-green-800 h-[60px] overflow-hidden">
           {dataTest !== undefined && dataTest.title}

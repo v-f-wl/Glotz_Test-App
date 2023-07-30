@@ -19,7 +19,7 @@ const UserCardTest = ({id}) => {
     <Link href={notFound ? '' :`/testpage/?id=${id}`} 
       className={`${notFound ? 'hidden' : 'flex'} flex-col gap-4 border border-teal-700 p-3 md:p-6 rounded-md shadow-md transition-all hover:shadow-green-800/40`}
     >
-      <h3 className="font-bold text-3xl text-slate-600 h-[65px] overflow-hidden">
+      <h3 className="font-bold text-2xl text-slate-600 h-[65px] overflow-hidden">
         {testData !== undefined && testData.title}
       </h3>
       <span className="text-slate-500 h-[89px] overflow-hidden">

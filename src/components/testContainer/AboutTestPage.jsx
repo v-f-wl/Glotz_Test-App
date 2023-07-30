@@ -4,19 +4,58 @@ import { CiRead,CiFaceSmile, CiGrid41, CiShare1} from 'react-icons/ci'
 import Button from '../UI/Button';
 import MainTitle from '../UI/MainTitle';
 import Paragraph from '../UI/Paragraph';
-const AboutTestPage = ({data, nextStep}) => {
+import clipboardCopy from "clipboard-copy";
+import { useState } from 'react';
 
+const AboutTestPage = ({data, nextStep}) => {
+  const [showToast, setShowToast] = useState(false)
   const convertDate = (dateValue) => {
     if(!dateValue){
       return ''
-    }
+    } 
+    
     const date = new Date(dateValue);
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     const editData = date.toLocaleDateString('ru-RU', options);
     return editData;
   }
+
+  const handleDivClick = () => {
+    console.log(data)
+    const linkToCopy = `https://glotz.vercel.app/testpage?id=${data._id}`
+    clipboardCopy(linkToCopy)
+      .then(() => {
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 1000); 
+      })
+      .catch((error) => alert("Не удалось скопировать ссылку: " + error));
+  };
+
   return ( 
-    <div className="mb-8">
+    <div className="mb-8 relative">
+      <div 
+        className={`
+          ${showToast ? 'opacity-100' : 'opacity-0'} 
+          ${showToast ? 'scale-100' : 'scale-0'} 
+          transition-all
+          absolute 
+          top-1/2
+          left-1/2
+          -translate-x-2/4 
+          -translate-y-2/4 
+          border 
+          z-40 
+          bg-white 
+          p-2
+          md:p-4 
+          text-center 
+          rounded-lg
+          border-indigo-400 
+          font-bold
+        `}
+      >
+        Ссылка скопирована 
+      </div>
       <MainTitle title={data.title}/>
       <div className="mt-6 flex items-center gap-4 text-slate-500 text-md md:text-xl">
         <Link href={`/userProfile/?id=${data.userId}`}>{data.user}</Link>
@@ -47,7 +86,7 @@ const AboutTestPage = ({data, nextStep}) => {
         <Button handleClick={nextStep} validationValue={true} titleValue='Пройти тест'/> 
         <div className="mt-6 md:mt-0 flex md:flex items-center md:justify-center gap-2 md:gap-4 cursor-pointer transition hover:text-blue-700">
           <CiShare1 size={24}/>
-          <span>Поделиться тестом</span>
+          <span onClick={handleDivClick}>Поделиться тестом</span>
         </div>
       </div>
     </div>

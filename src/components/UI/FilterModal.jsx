@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { CiFilter, CiCircleRemove } from 'react-icons/ci'
 import { resetFilter, changeCategory } from '@/redux/filter/filter-slice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import FilterCategory from './FilterUI/FilterCategory';
 import FilterRating from './FilterUI/FilterRating';
 import Button from './Button';
@@ -15,6 +15,12 @@ const FilterModal = () => {
     category: '',
     rating: ''
   })
+  const filter = useSelector(state => state.filterReducer.value)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    setHandleSettings(filter)
+  },[filter])
 
   useEffect(() => {
     if(handleSettings.category === '' && handleSettings.rating === ''){
@@ -24,7 +30,6 @@ const FilterModal = () => {
     }
   },[handleSettings])
 
-  const dispatch = useDispatch()
 
   const updateSettings = (key, value) => {
     setHandleSettings(prev => {
@@ -75,7 +80,8 @@ const FilterModal = () => {
           rounded-md 
           bg-white 
           z-10 
-          w-[400px] 
+          w-[300px] 
+          md:w-[400px] 
           overflow-hidden 
         `}
       >
