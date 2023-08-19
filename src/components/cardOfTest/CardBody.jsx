@@ -1,9 +1,12 @@
 import { CiRead, CiFaceSmile, CiGrid41 } from 'react-icons/ci'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const CardBody = ({id, title, description, watchings, ratingResult, category}) => {
+  const router = useRouter()
   return ( 
-    <Link href={`/testpage/?id=${id}`} 
+    <div 
+      onClick={() => router.push(`/testpage/?id=${id}`)}
       className="flex flex-col gap-4 border border-teal-700 p-3 md:p-6 rounded-md shadow-md transition-all hover:shadow-green-800/40"
     >
       <h3 className="font-bold text-xl md:text-3xl text-slate-600 max-h-[55px] md:max-h-[65px] overflow-hidden">
@@ -26,7 +29,7 @@ const CardBody = ({id, title, description, watchings, ratingResult, category}) =
           <span className="text-sm">{category}</span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
  
