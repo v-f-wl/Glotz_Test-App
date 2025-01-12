@@ -62,7 +62,7 @@ const FilterModal = () => {
         onClick={() => setOpenModal(prev => prev = !prev)}
         className="flex items-center gap-2 cursor-pointer"
       >
-        <span>Фильтр</span>
+        <span>Filter</span>
         <CiFilter size={18}/>
       </div>
       <div 
@@ -92,23 +92,23 @@ const FilterModal = () => {
           <CiCircleRemove size={24}/>
         </div>
         <h3 className="text-xl md:text-2xl font-medium text-slate-900">
-          Категория
+        Category
         </h3>
         <div className="mt-3">
           <FilterCategory handleChange={updateSettings} filterValue={handleSettings.category}/>
         </div>
         <h3 className="mt-5 text-xl md:text-2xl font-medium text-slate-900">
-          Рейтинг
+        Rating
         </h3>
         <div className="mt-3">
           <FilterRating handleChange={updateSettings} filterValue={handleSettings.rating}/>
         </div>
         <div className="mt-8 flex gap-4 items-center">
 
-          <Button handleClick={() => sendValue()} validationValue={buttonValid} titleValue="Применить"/>
+          <Button handleClick={() => sendValue()} validationValue={buttonValid} titleValue="Apply"/>
           <div
             onClick={resetFilterModal}
-            className="cursor-pointer">Сбросить</div>
+            className="cursor-pointer">Reset</div>
         </div>
       </div>
     </div>

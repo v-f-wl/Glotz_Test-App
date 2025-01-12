@@ -63,20 +63,20 @@ const MainWalls = () => {
             : 
             (
               <div className={`${haventTests && 'hidden'} h-[20vh] col-span-2  w-full flex flex-col justify-center items-center`}>
-                Загрузка...
+                Loading...
               </div>
             )
         }
         {haventTests && (
           <div className="w-full h-full max-h-[300px] col-span-2 mt-10 md:mt-24 flex flex-col items-center gap-8 justify-center">
-            <h3 className="font-bold text-2xl md:text-4xl text-center">Тесты не найдены</h3>
-            <Button handleClick={() => dispatch(resetFilter())} validationValue={true} titleValue='Сбросить фильтр'/>
+            <h3 className="font-bold text-2xl md:text-4xl text-center">Tests not found</h3>
+            <Button handleClick={() => dispatch(resetFilter())} validationValue={true} titleValue='Reset filter'/>
           </div>
         )}
       </div>
       <div className="mt-8 flex justify-center">
         {moreData ? 
-          <Button handleClick={getMoreTests} validationValue={true} titleValue="Больше тестов"/>
+          <Button handleClick={getMoreTests} validationValue={true} titleValue="More tests"/>
         :
           null
         }

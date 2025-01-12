@@ -5,7 +5,7 @@ const MainTop = () => {
   return (  
     <div className="flex items-center justify-between">
       <TitleWithLine
-        title='Тесты'
+        title='Tests'
         linePosition={false}
       />
       <MainFilter/>

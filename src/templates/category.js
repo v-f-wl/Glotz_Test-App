@@ -1,1 +1,1 @@
-export const category = ['Психология', 'Искусство и музыка', 'География', 'Развлечения', 'Другое']
+export const category = ['Psychology', 'Art and Music', 'Geography', 'Entertainment', 'Other']

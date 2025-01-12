@@ -68,11 +68,11 @@ const LogInScreen = ({changeScreen}) => {
         </span>
       </div>
       <h2 className="text-center text-2xl lg:text-4xl  font-medium  text-green-900">
-        Вход
+      Login
       </h2>
       {!!handleError && 
         <div className="mt-4 text-center font-light">
-          <Paragraph description='Убедитесь, что данные введены верно'/>
+          <Paragraph description='Make sure the data is entered correctly'/>
         </div>
       }
       <form className="mt-8 flex flex-col gap-4">
@@ -80,14 +80,14 @@ const LogInScreen = ({changeScreen}) => {
           onChange={(e) => setEmail(e.target.value)}
           type="text" 
           className="border p-2 rounded-lg" 
-          placeholder="Электронная почта"
+          placeholder="Email"
           value={emailValue}
         />
         <div className="flex relative">
           <input 
             type={showPassword ? 'text' : 'password'}
             className="w-full h-full p-2 pr-10 border rounded-lg" 
-            placeholder="Пароль"
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             value={passwordValue}
           />
@@ -111,13 +111,13 @@ const LogInScreen = ({changeScreen}) => {
             onClick={() => logIn()}
             className="border border-green-800 py-2 px-4 rounded-lg cursor-pointer"
           >
-            Войти
+            Sign In
           </div>
           <div 
             onClick={changeScreen}
             className="underline cursor-pointer p-2 text-slate-500"
           >
-            Регистрация
+            Registration
           </div>
         </div>
       </form>

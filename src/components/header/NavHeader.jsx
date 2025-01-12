@@ -78,17 +78,17 @@ const NavHeader = () => {
       >
         <li className="">
           <Link href='/' className="block py-3 text-green-900 transition hover:text-red-300 cursor-pointer">
-            Тесты
+          Tests
           </Link>
         </li>
         <li className="">
           <Link href={`${userProfile == true ? `/resultPage/?id=${userId}` : '/authorizationPage'}`} className="block py-3 text-green-900 transition hover:text-red-300 cursor-pointer">
-            Результаты
+          Results
           </Link>
         </li>
         <li className="">
           <Link href={`${userProfile == true ? '/createPage' : '/authorizationPage'}`} className="block py-3 text-green-900 transition hover:text-red-300 cursor-pointer">
-            Создать тест
+          Create a test
           </Link>
         </li>
         {userProfile == true ? 
@@ -99,11 +99,11 @@ const NavHeader = () => {
           (
             <li className="flex items-center gap-2">
               <Link href="/authorizationPage" className="block py-3 text-green-900 transition hover:text-red-300 cursor-pointer">
-                Войти
+                Sign In 
               </Link>
               <span>/</span>
               <Link href={`/authorizationPage/?id=signin`} className="block py-3 text-green-900 transition hover:text-red-300 cursor-pointer">
-                Зарегистрироваться
+                Sign Up
               </Link>
             </li>
           )
