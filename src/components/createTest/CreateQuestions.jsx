@@ -80,7 +80,7 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
   return ( 
     <div className="flex flex-col gap-4 md:gap-8">
         <div className="text-lg md:text-xl font-medium text-slate-600">
-          Enter the questions and answers for your test. You've selected {countOfAnswer} answer options for each question. Each answer will contain the following number of points
+          Enter the questions and answers for your test. You&apos;ve selected {countOfAnswer} answer options for each question. Each answer will contain the following number of points
         </div>
 
         <div className="text-light">
