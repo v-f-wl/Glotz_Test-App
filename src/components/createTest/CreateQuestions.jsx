@@ -21,10 +21,10 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
       return (
         <ul>
           <li>
-            Первый вариант ответа - 0 баллов 
+            First answer option - 0 point
           </li>
           <li>
-            Второй вариант ответа - 2 балла 
+            Second answer option - 2 points 
           </li>
         </ul>
       )
@@ -32,13 +32,13 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
       return (
         <ul>
           <li>
-            Первый вариант ответа - 0 баллов 
+            First answer option - 0 point 
           </li>
           <li>
-            Второй вариант ответа - 2 балла 
+            Second answer option - 2 points 
           </li>
           <li>
-            Третий вариант ответа - 4 балла 
+            Third answer option - 4 points 
           </li>
         </ul>
       )
@@ -46,16 +46,16 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
       return (
         <ul>
           <li>
-            Первый вариант ответа - 1 баллов 
+            First answer option - 1 point
           </li>
           <li>
-            Второй вариант ответа - 2 балла 
+            Second answer option - 2 points 
           </li>
           <li>
-            Третий вариант ответа - 3 балла 
+            Third answer option - 3 points 
           </li>
           <li>
-            Третий вариант ответа - 4 балла 
+            Fourth answer option - 4 points 
           </li>
         </ul>
       )
@@ -80,7 +80,7 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
   return ( 
     <div className="flex flex-col gap-4 md:gap-8">
         <div className="text-lg md:text-xl font-medium text-slate-600">
-          Введите вопросы и ответы вашего теста. Вы выбрали {countOfAnswer} варианта ответов на вопрос. Каждый ответ будет содержать следующее количество баллов 
+          Enter the questions and answers for your test. You've selected {countOfAnswer} answer options for each question. Each answer will contain the following number of points
         </div>
 
         <div className="text-light">
@@ -89,7 +89,7 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
 
         <div className="flex flex-col gap-4 md:gap-8">
           <h3 className="text-2xl font-medium text-green-800">
-            Вопросы:
+            Questions:
           </h3>
           <div className="flex flex-col gap-4">
             {renderQuesions()}
@@ -100,7 +100,7 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
           >
             <CiSquarePlus size={24}/>
             <span>
-              Добавить вопрос
+              Add question
             </span>
           </div>
         </div>
@@ -109,7 +109,7 @@ const CreateQuestions = ({nextStepQuestion, countOfAnswer}) => {
           <Button
             handleClick={() => nextStepQuestion(questionData, countOfQuestion)} 
             validationValue={true} 
-            titleValue='Продолжить'
+            titleValue='Continue'
           />
         </div>
       </div>

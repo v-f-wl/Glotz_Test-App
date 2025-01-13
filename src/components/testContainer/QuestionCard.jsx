@@ -64,7 +64,7 @@ const QuestionCard = ({answerCount, question, questionsCount, addScore, question
       <div className="mt-6 md:mt-12 flex flex-col gap-4 w-full">
         {renderAnswer()}
       </div>
-      <Button handleClick={answerToQuestion} validationValue={numberOfAnswer > 0} titleValue='Продолжить'/>
+      <Button handleClick={answerToQuestion} validationValue={numberOfAnswer > 0} titleValue='Continue'/>
     </div>
   );
 }

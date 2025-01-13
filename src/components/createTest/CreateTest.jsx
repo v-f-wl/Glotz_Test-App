@@ -153,7 +153,7 @@ const CreateTest = () => {
   }
   return ( 
     <div className="flex items-center flex-col relative">
-      <TitleWithLine title='Создать тест' linePosition={true}/>
+      <TitleWithLine title='Create a test' linePosition={true}/>
       <div className="mt-6 md:mt-12 w-full mb-8">
         {renderComponent()}
       </div>

@@ -54,7 +54,7 @@ const AboutTestPage = ({data, nextStep}) => {
           font-bold
         `}
       >
-        Ссылка скопирована 
+        Link copied 
       </div>
       <MainTitle title={data.title}/>
       <div className="mt-6 flex items-center gap-4 text-slate-500 text-md md:text-xl">
@@ -80,13 +80,13 @@ const AboutTestPage = ({data, nextStep}) => {
         <Paragraph description={data.description}/> 
       </div>
       <div className="mt-4 md:mt-6 text-slate-500 text-md md:text-xl flex items-center gap-2">
-        <span>Количество вопросов:</span>{data.questionsCount}
+        <span>Number of questions:</span>{data.questionsCount}
       </div>
       <div className="mt-8 md:mt-16 block md:flex md:items-center md:gap-8">
-        <Button handleClick={nextStep} validationValue={true} titleValue='Пройти тест'/> 
+        <Button handleClick={nextStep} validationValue={true} titleValue='Take the test'/> 
         <div className="mt-6 md:mt-0 flex md:flex items-center md:justify-center gap-2 md:gap-4 cursor-pointer transition hover:text-blue-700">
           <CiShare1 size={24}/>
-          <span onClick={handleDivClick}>Поделиться тестом</span>
+          <span onClick={handleDivClick}>Share the test</span>
         </div>
       </div>
     </div>

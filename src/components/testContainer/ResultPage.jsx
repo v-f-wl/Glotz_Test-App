@@ -64,7 +64,7 @@ const ResultPage = ({data, id}) => {
       </div>
       <div className="mt-12 flex flex-col items-center gap-4">
         <h3 className="text-xl text-slate-600">
-          Оценить тест
+          Rate the test
         </h3>
         <div className="flex items-center gap-2 md:gap-4">
           {render()}
@@ -72,13 +72,13 @@ const ResultPage = ({data, id}) => {
         <div 
           onClick={() => sendRating()}
           className={`${ratingSent > 0 ? 'hidden' : ''}`}>
-          <Button handleClick={sendRating} validationValue={ratingValue > 0} titleValue='Отправить'/>
+          <Button handleClick={sendRating} validationValue={ratingValue > 0} titleValue='Submit'/>
         </div>
 
       </div>
       <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-        <Link href='/' className="p-2 md:p-4 font-light underline">Вернуться на главную</Link>
-        <Link href='/userProfile' className="p-2 md:p-4 font-light underline">Еще тесты от автора</Link>
+        <Link href='/' className="p-2 md:p-4 font-light underline">Return to the main page</Link>
+        <Link href='/userProfile' className="p-2 md:p-4 font-light underline">More tests from the author</Link>
       </div>
     </div>
   );

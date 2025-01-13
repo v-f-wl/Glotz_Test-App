@@ -51,27 +51,27 @@ const ProfileContainer = () => {
             onClick={() => setEditTest(prev => prev = !prev)}
             className="cursor-pointer flex items-center gap-2 transition hover:opacity-20"
           >
-          <span className='underline'>Редактировать</span>
+          <span className='underline'>Edit</span>
           <RxMixerVertical size={24}/>
           </div>
           <div 
             onClick={() => exitFromProfile()}
             className="cursor-pointer flex items-center gap-2 transition hover:opacity-20"
           >
-            <span className='underline'>Выход</span>
+            <span className='underline'>Logout</span>
             <RxExit className='' size={24}/> 
           </div>
         </div>
       </div>
 
-      <TitleWithLine title='Ваши тесты'/>
+      <TitleWithLine title='Your tests'/>
 
 
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         {personInfo !== undefined  ?  
           renderTests() 
           : 
-          <div className="col-span-2 text-green-800 text-xl text-center">У вас пока нет тестов</div>
+          <div className="col-span-2 text-green-800 text-xl text-center">You don’t have any tests yet</div>
         }
       </div>
     </div>

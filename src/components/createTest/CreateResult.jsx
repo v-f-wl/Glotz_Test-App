@@ -58,8 +58,8 @@ const CreateResult = ({questionQount, point, resultAnswer, nextStep, changeValue
   return ( 
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-4">
-        <span className="text lg:text-2xl text-green-900 font-medium">Введите результаты вашего теста.</span>
-        <span className="text-md md:text-xl text-slate-800">Вопросов в тесте: {questionQount}, максимальноe количество баллов: {maxPoint}</span>
+        <span className="text lg:text-2xl text-green-900 font-medium">Enter the results of your test.</span>
+        <span className="text-md md:text-xl text-slate-800">Number of questions in the test: {questionQount}, maximum score: {maxPoint}</span>
       </div>
       <div className="flex flex-col gap-8">
         {renderResult()}
@@ -68,7 +68,7 @@ const CreateResult = ({questionQount, point, resultAnswer, nextStep, changeValue
         <Button
           handleClick={validation} 
           validationValue={true} 
-          titleValue='Продолжить'
+          titleValue='Continue'
         />
       </div>
     </div>

@@ -41,11 +41,11 @@ const InputsQiestion = ({index, data, changeValue, countOfAnswer}) => {
             onChange={(e) => handleChangeData('','title', e.target.value)}
             value={questionBody.title || ''}
             type="text" 
-            placeholder='Введите вопрос'
+            placeholder='Enter the question'
             className="py-1 md:py-2 px-2 md:px-3 border-b w-full outline-none font-medium text-lg md:text-xl" 
           />
         </div>
-        <h3 className="text-md md:text-xl font-medium">Ответы:</h3>
+        <h3 className="text-md md:text-xl font-medium">Answers:</h3>
         <ul className="ml-2 md:ml-4 flex flex-col gap-4">
           {countOfAnswer > 0 && renderAnswer()}
         </ul>

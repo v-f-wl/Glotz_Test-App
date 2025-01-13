@@ -81,29 +81,29 @@ const MyTestCard = ({testId, isEdit}) => {
             <ul className="flex flex-col gap-2 text-md">
               <li className="flex gap-2 items-center">
                 <CiRead size={26}/>
-                <span>Просмотрено:</span>
+                <span>Viewed:</span>
                 <span>{dataTest !== undefined && dataTest.watchings}</span>
               </li>
               <li className="flex gap-2 items-center">
                 <CiCirclePlus size={26}/>
-                <span>Начато:</span>
+                <span>Started:</span>
                 <span>{dataTest !== undefined && dataTest.started}</span>
               </li>
               <li className="flex gap-2 items-center">
                 <CiCircleCheck size={26}/>
-                <span>Пройдено:</span>
+                <span>Completed:</span>
                 <span>{dataTest !== undefined && dataTest.finished}</span>
               </li>
               <li className="flex gap-2 items-center">
                 <CiFaceSmile size={26}/>
-                <span>Рейтинг:</span>
+                <span>Rating:</span>
                 <span>
                   {dataTest !== undefined ? 
                     (
-                      dataTest.ratingResult === 0 ? 'Оценки отсутствуют' : dataTest.ratingResult
+                      dataTest.ratingResult === 0 ? 'No ratings available' : dataTest.ratingResult
                     ) 
                     : 
-                    'Загрузка'  
+                    'Loading'  
                   }
                 </span>
               </li>
@@ -117,11 +117,11 @@ const MyTestCard = ({testId, isEdit}) => {
               className={`${confirmDelete ? 'hidden' : 'flex'} p-4 flex-col gap-3 items-center justify-center cursor-pointer transition-all hover:border hover:border-indigo-400 hover:text-indigo-400 rounded-lg`}
             >
               <AiOutlineDelete size={32}/>
-              <span>Удалить</span>
+              <span>Delete</span>
             </div>
             <div className={`${confirmDelete ? 'flex' : 'hidden'} gap-4`}>
-              <ButtonAcсept handleFunction={deleteTest} title='Удалить' color='accept'/>
-              <ButtonAcсept handleFunction={() => dispatch(resetSelect())} title='Отмена'/>
+              <ButtonAcсept handleFunction={deleteTest} title='Delete' color='accept'/>
+              <ButtonAcсept handleFunction={() => dispatch(resetSelect())} title='Cancel'/>
             </div>
           </div>
           <div className={`${loaded ? 'block' : 'hidden'} absolute z-30 top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-white`}>

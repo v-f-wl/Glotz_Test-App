@@ -107,14 +107,14 @@ const CountOfAnsers = ({prevStep, nextStep, changeValue}) => {
   return ( 
     <div className="flex flex-col gap-4 md:gap-8">
         <div className="flex flex-col gap-4">
-          <Title title='Выберете количество возможных результатов после прохождения вашего теста'/>
+          <Title title='Select the number of possible results after completing your test'/>
           <span></span>
           <div className="flex justify-center gap-4 md:gap-10">
             {renderCheckBox(1, 'result')}
           </div>   
         </div>
         <div className="mt-8 flex flex-col gap-4">
-          <Title title='Выберете количество вариантов ответов  на вопрос'/>
+          <Title title='Select the number of answer options for the question'/>
           <span></span>
           <div className="flex justify-center gap-4 md:gap-10">
             {renderCheckBox(2, 'question')}
@@ -122,7 +122,7 @@ const CountOfAnsers = ({prevStep, nextStep, changeValue}) => {
         </div>
         <div className="mt-8 flex flex-col gap-4">
           <h3 className="text-xl font-medium text-slate-600 text-center">
-            Выберете категорию вашего теста
+          Select the category of your test
           </h3>
           <span></span>
           <ul className="flex justify-center gap-2 md:gap-4 flex-wrap md:px-[30%]">
@@ -133,12 +133,12 @@ const CountOfAnsers = ({prevStep, nextStep, changeValue}) => {
           <Button
             handleClick={prevStep}
             validationValue={true}
-            titleValue='Назад'
+            titleValue='Back'
           />
           <Button
             handleClick={nextStep}
             validationValue={muteButton}
-            titleValue='Продолжить'
+            titleValue='Continue'
           />
         </div>
     </div>

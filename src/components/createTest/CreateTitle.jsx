@@ -32,7 +32,7 @@ const CreateTitle = ({titleData, nextStep, descriptionData}) => {
   return ( 
     <div className="flex flex-col gap-4 md:gap-8">
       <div className="flex flex-col gap-4">
-        <Title title='1.Напишите заголовок теста'/>
+        <Title title='1.Write the test title'/>
         <input 
           key="title"
           id='title'
@@ -41,11 +41,11 @@ const CreateTitle = ({titleData, nextStep, descriptionData}) => {
           className="p-2 md:p-4 border border-green-800 rounded-lg w-full outline-none"
           onChange={(e) => setTitleValue(e.target.value)}
           value={titleValue}
-          placeholder="Мин. число символов 10"
+          placeholder="Minimum 10 characters"
         />
       </div>
       <div className="flex flex-col gap-4">
-        <Title title="2.Напишите описание теста"/>
+        <Title title="2.Write the test description"/>
         <textarea 
           key="description"
           id='description'
@@ -55,7 +55,7 @@ const CreateTitle = ({titleData, nextStep, descriptionData}) => {
           className="p-2 md:p-4 border border-green-800 rounded-lg w-full resize-none outline-none"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
-          placeholder="Мин. число символов 20"
+          placeholder="Minimum 20 characters"
         >
         </textarea>
       </div>
@@ -63,7 +63,7 @@ const CreateTitle = ({titleData, nextStep, descriptionData}) => {
         <Button 
           handleClick={validetion}
           validationValue={muteButton}
-          titleValue='Продолжить'
+          titleValue='Continue'
         />
       </div>
     </div>

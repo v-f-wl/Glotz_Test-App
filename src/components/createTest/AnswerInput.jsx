@@ -6,7 +6,7 @@ const AnswerInput = ({index, handleAnswerChange}) => {
       <input 
         onChange={(e) => handleAnswerChange(index, 'answer', e.target.value)}
         type="text" 
-        placeholder='Ответ'
+        placeholder='Answer'
         className='outline-none w-full border-b'
       />
     </li>

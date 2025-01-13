@@ -35,9 +35,9 @@ const ResultCard = ({number, resultCount ,maxPoint, updateData}) => {
 
   return ( 
     <div className="border-l border-green-900 pl-4">
-      <div className="text-xl font-bold text-green-900">Результат {number}</div>
+      <div className="text-xl font-bold text-green-900">Result {number}</div>
       <div className="flex items-center gap-2 text-xl  text-slate-600">
-        Количество баллов: от 
+        Score: from 
         {number === 1 ? 
           (
             <div className="">0</div>
@@ -57,14 +57,14 @@ const ResultCard = ({number, resultCount ,maxPoint, updateData}) => {
         onChange={(e) => handleChangeData('title', e.target.value)}
         type="text" 
         className="mt-2 w-full p-2 outline-none border border-slate-200 rounded-lg text-lg md:text-2xl font-medium" 
-        placeholder="Заголовок результата"
+        placeholder="Result title"
         value={dataResult.title || ''}
       />
       <textarea 
         onChange={(e) => handleChangeData('description', e.target.value)}
         rows="3" 
         className="mt-4 w-full resize-none border border-slate-200 rounded-lg outline-none p-2 text-md md:text-xl" 
-        placeholder="Описание результата"
+        placeholder="Result description"
         value={dataResult.description || ''}
       >
 

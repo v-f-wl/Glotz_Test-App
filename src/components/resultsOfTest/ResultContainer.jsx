@@ -27,7 +27,7 @@ const ResultContainer = () => {
   }
   return ( 
     <div className="mb-4 md:mb-8 flex flex-col gap-4 md:gap-8">
-      <TitleWithLine title='Тесты пройденные вами' />
+      <TitleWithLine title='Tests completed by you' />
       <div className="flex flex-col gap-4">
         {resultData !== undefined && renderResult()}
       </div>

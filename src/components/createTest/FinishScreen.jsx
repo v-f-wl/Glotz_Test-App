@@ -68,7 +68,7 @@ const FinishScreen = ({
             {title}
           </div>
           <div className="mt-1 md:mt-2 font-light text-sm text-slate-500">
-            Колличество балоов: от {score}
+            Score: from  {score}
           </div>
           <div className="mt-2 md:mt-4 text-sm md:text-base text-slate-700">
             {discription}
@@ -85,12 +85,12 @@ const FinishScreen = ({
     <div className="">
         {finishModal && (
           <div className="absolute inset-0 z-10 bg-white flex flex-col justify-center items-center gap-8">
-            <h3 className="font-bold text-4xl text-green-800">Тест создан</h3>
+            <h3 className="font-bold text-4xl text-green-800">Test created</h3>
             <div 
               onClick={() => router.push('/')}
               className="inline-block underline cursor-pointer"
             >
-              Вернуться на главную страницу
+              Return to the main page
             </div>
           </div>
         )}
@@ -119,7 +119,7 @@ const FinishScreen = ({
           >
             {openQuestions ? (<CiSquareChevUp size={24}/> ) : (<CiSquareChevDown size={24}/> )}
             <span>
-              Вопросы теста
+            Test questions
             </span>
           </div>
           <div className="flex flex-col gap-4">{renderQuestion()}</div>
@@ -141,7 +141,7 @@ const FinishScreen = ({
             "
           >
             {openResult ? (<CiSquareChevUp size={24}/> ) : (<CiSquareChevDown size={24}/> )}
-            <span>Результаты теста</span>
+            <span>Test results</span>
           </div>
           <div className="flex flex-col gap-4">
             {renderResult()}
@@ -151,7 +151,7 @@ const FinishScreen = ({
           <Button
             handleClick={createTest}
             validationValue={true}
-            titleValue='Создать'
+            titleValue='Create'
           />
         </div>
       </div>

@@ -36,7 +36,7 @@ const UserContainer = () => {
       </h2>
       <div className="mt-8">
         <TitleWithLine
-          title='Тесты автора'
+          title="Author's tests"
           linePosition={false}
         />
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 mb-4 md:mb-8">
@@ -47,7 +47,7 @@ const UserContainer = () => {
             :
             (
               <div className="">
-                Тестов нет
+                No tests available
               </div>
             )
           }
