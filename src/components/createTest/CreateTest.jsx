@@ -23,6 +23,7 @@ const CreateTest = () => {
     result: {}
   }) 
   const [finishModal, setFinishModal] = useState(false)
+  const [loadingCreateTest, setLoadingCreateTest] = useState(false)
   const token = Cookies.get('token')
   const userId = Cookies.get('id')
   
@@ -84,6 +85,8 @@ const CreateTest = () => {
   }, [])
 
   const createTest = () => {
+    setLoadingCreateTest(true)
+    if(loadingCreateTest) return
     try{
       const data = {...dataTest}
 
@@ -95,7 +98,7 @@ const CreateTest = () => {
       })
       .catch(err => console.log(err))
     }catch(error){
-
+      setLoadingCreateTest(false)
     }
   }
 

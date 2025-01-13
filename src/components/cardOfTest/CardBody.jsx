@@ -12,7 +12,7 @@ const CardBody = ({id, title, description, watchings, ratingResult, category}) =
       <h3 className="font-bold text-xl md:text-3xl text-slate-600 max-h-[55px] md:max-h-[65px] overflow-hidden">
         {title}
       </h3>
-      <span className="text-slate-500 max-h-[89px] md:h-[89px] overflow-hidden">
+      <span className="text-slate-500 max-h-[92px] md:h-[90px] overflow-hidden">
         {description}
       </span>
       <div className="flex items-center gap-4 mt-auto text-slate-500">

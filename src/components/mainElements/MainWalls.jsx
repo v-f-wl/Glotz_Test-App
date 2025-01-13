@@ -21,7 +21,6 @@ const MainWalls = () => {
     axios.post('/api/getPreviewTest', {...filterParams, pageCount: 1})
     .then(res => {
       setMoreData(res.data.hasMore)
-      console.log(res.data)
       if(res.data.tests.length > 0 ){
         setTests(res.data.tests)
         setHaventTests(false)
@@ -45,41 +44,40 @@ const MainWalls = () => {
     })
     setPageCount(prev => prev = prev + 1)
   }
+  if(tests === undefined){
+    return(
+      <div className={`${haventTests && 'hidden'} h-[20vh] col-span-2  w-full flex flex-col justify-center items-center`}>
+        Loading...
+      </div>
+    )
+  }
   return ( 
     <div className="mt-4 lg:mt-8 mb-4">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-10">
-        {tests !== undefined  ? 
-            (tests.map(item => (
-              <CardBody
-                key={item._id}
-                id={item._id}
-                title={item.title}
-                description={item.description}
-                watchings={item.watchings}
-                ratingResult={item.ratingResult}
-                category={item.category}
-              />
-            ))) 
-            : 
-            (
-              <div className={`${haventTests && 'hidden'} h-[20vh] col-span-2  w-full flex flex-col justify-center items-center`}>
-                Loading...
-              </div>
-            )
-        }
+        {(tests.map(item => (
+                <CardBody
+                  key={item._id}
+                  id={item._id}
+                  title={item.title}
+                  description={item.description}
+                  watchings={item.watchings}
+                  ratingResult={item.ratingResult}
+                  category={item.category}
+                />
+        )))}
         {haventTests && (
           <div className="w-full h-full max-h-[300px] col-span-2 mt-10 md:mt-24 flex flex-col items-center gap-8 justify-center">
             <h3 className="font-bold text-2xl md:text-4xl text-center">Tests not found</h3>
             <Button handleClick={() => dispatch(resetFilter())} validationValue={true} titleValue='Reset filter'/>
           </div>
         )}
-      </div>
-      <div className="mt-8 flex justify-center">
-        {moreData ? 
-          <Button handleClick={getMoreTests} validationValue={true} titleValue="More tests"/>
-        :
-          null
-        }
+        <div className="mt-8 flex justify-center">
+          {moreData ? 
+            <Button handleClick={getMoreTests} validationValue={true} titleValue="More tests"/>
+          :
+            null
+          }
+        </div>
       </div>
     </div>
   );

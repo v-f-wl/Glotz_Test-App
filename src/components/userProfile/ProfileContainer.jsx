@@ -12,7 +12,7 @@ const ProfileContainer = () => {
   const { id } = router.query
   const cookiesId = Cookies.get('id')
   const [personInfo, setPersonInfo] = useState()
-  const [testInfo, setTestInfo] = useState()
+  const [testInfo, setTestInfo] = useState([])
   const [editTest, setEditTest] = useState(false)
 
 
@@ -21,8 +21,8 @@ const ProfileContainer = () => {
     if(id !== undefined && id === cookiesId){
       axios.get(`/api/getMyData/?id=${id}`)
       .then(res => {
-        setPersonInfo(res.data.userInfo)
-        setTestInfo(res.data.testData)
+        setPersonInfo(prev => res.data.userInfo)
+        setTestInfo(prev => res.data.testData)
       })
     }
   }, [id, cookiesId])
@@ -68,7 +68,7 @@ const ProfileContainer = () => {
 
 
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-        {personInfo !== undefined  ?  
+        {testInfo.length > 0 ?  
           renderTests() 
           : 
           <div className="col-span-2 text-green-800 text-xl text-center">You don’t have any tests yet</div>
