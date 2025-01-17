@@ -78,7 +78,7 @@ const ResultPage = ({data, id}) => {
       </div>
       <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
         <Link href='/' className="p-2 md:p-4 font-light underline">Return to the main page</Link>
-        <Link href='/userProfile' className="p-2 md:p-4 font-light underline">More tests from the author</Link>
+        <Link href={`/userProfile/?id=${data.userId}`} className="p-2 md:p-4 font-light underline">More tests from the author</Link>
       </div>
     </div>
   );

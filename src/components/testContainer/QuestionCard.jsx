@@ -55,7 +55,7 @@ const QuestionCard = ({answerCount, question, questionsCount, addScore, question
   }
   return ( 
     <div className="flex flex-col items-center gap-4">
-      <div className="mx-auto md:w-[905px] text-center">
+      <div className="mx-auto text-center">
         <MainTitle title={question !== undefined && question.title}/>
       </div>
       <div className="mt-4 font-medium text-xl text-slate-400">

@@ -14,7 +14,13 @@ const FilterRating = ({handleChange, filterValue}) => {
     }
   }, [filterValue])
 
-  
+  const RenderRatingItem = () => {
+    const resultArr = []
+    for(let i = 9; i >= 6; i--){
+      resultArr.push(<RatingItem key={`RatingItem${i}`} title={`Rating from ${i}`} rating={i}/>)
+    }
+    return resultArr
+  }
   const changeHandleValue = (value) => {
     if(handleValue === value){
       setHandleValue('')
@@ -39,10 +45,7 @@ const FilterRating = ({handleChange, filterValue}) => {
   }
   return ( 
     <div className="flex flex-col gap-3">
-      <RatingItem title='Рейтинг от 9' rating='9'/>
-      <RatingItem title='Рейтинг от 8' rating='8'/>
-      <RatingItem title='Рейтинг от 7' rating='7'/>
-      <RatingItem title='Рейтинг от 6' rating='6'/>
+      <RenderRatingItem/>
     </div>
   );
 }
